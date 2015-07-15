@@ -1,0 +1,4 @@
+# Easy proxy. It needs mod_proxy to work
+DirectoryIndex disabled
+RewriteEngine on
+RewriteRule  (.*)  http://localhost:8090/$1  [P,L]

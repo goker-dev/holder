@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is an open source server side image holder web service">
+    <meta name="author" content="goker">
+    <title>holder.ninja</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .image-scale img {
+            width: 100%;
+            heihgt: auto;
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section id="about" class="content-section">
+    <div class="about-section container">
+        <div class="col-lg-12">
+            <h2>holder.ninja</h2>
+
+            <p>This is an open source server side <strong>image holder</strong> web service. All images are SVG format
+                and they can scale nicely. It doesn't support another image formats. And it gives the requested images
+                with a "max-age one year" header for awesome cache controlling. </p>
+
+            <h3>USAGE</h3>
+            <pre>http://holder.ninja/800x600.svg</pre>
+            <h4>PARAMETERS</h4>
+
+            <p>The service has six parameters and they separated with a comma.</p>
+            <table class="table table-bordered">
+                <tr>
+                    <th>#</th>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                    <th>Sample</th>
+                </tr>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Size</td>
+                    <td>Width and Height</td>
+                    <td>800x600</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Text</td>
+                    <td>Optional image text. Default: Their size value. It can be two lines by a | separator.</td>
+                    <td>HELLO|WORLD</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Background</td>
+                    <td>Optional hex background color without #. Default: ddd</td>
+                    <td>ddd</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Foreground</td>
+                    <td>Optional text color without #. Default: 333</td>
+                    <td>666</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Font size</td>
+                    <td>Font size without px. Default: 24</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Font family</td>
+                    <td>Single font family. Default: Helvetica</td>
+                    <td>Arial</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <h3>SAMPLES</h3>
+
+            <p>All sample images scaled by css.</p>
+
+            <div class="row">
+                <div class="col-lg-3 image-scale">
+                    <pre>http://holder.ninja/400x300.svg</pre>
+                    <img src="http://holder.ninja/400x300.svg">
+                </div>
+                <div class="col-lg-3 image-scale">
+                    <pre>http://holder.ninja/400x300,sample%20text.svg</pre>
+                    <img src="http://holder.ninja/400x300,sample%20text.svg">
+                </div>
+                <div class="col-lg-3 image-scale">
+                    <pre>http://holder.ninja/400x300,,8bd,fff.svg</pre>
+                    <img src="http://holder.ninja/400x300,,8bd,fff.svg">
+                </div>
+                <div class="col-lg-3 image-scale">
+                    <pre>http://holder.ninja/400x300,HELLO|WORLD,,,44,Verdana.svg</pre>
+                    <img src="http://holder.ninja/400x300,HELLO|WORLD,,,44,Verdana.svg">
+                </div>
+            </div>
+
+            <h3>CODE</h3>
+
+            <p>I coded it with NodeJS. You can clone and run on your local server freely or you can help the development
+                on <a
+                        href="https://github.com/gokercebeci/holder" target="_blank"><i
+                        class="fa fa-github"></i> github</a></p>
+
+        </div>
+    </div>
+</section>
+<footer id="page-footer">
+    <div class="container">
+        <div class="col-lg-12 small text-center">
+            holder.ninja <i class="fa fa-cc fa-fw"></i> 2015 developed by <a href=http://goker.me>goker</a>
+            sponsored by <a href=http://basepart.com>BASEPART</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
