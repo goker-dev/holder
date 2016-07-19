@@ -1,0 +1,1 @@
+![alt text](how-it-works.gif "how it works")
